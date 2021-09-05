@@ -7,6 +7,14 @@
         <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/drawable/ic_logout.xml" value="0.38125" />
         <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/drawable/ic_syringe.xml" value="0.38125" />
         <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/drawable/ic_tab_covid_center.xml" value="0.38125" />
+        <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/drawable/tab_background_selected.xml" value="0.25885416666666666" />
+        <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/drawable/tab_bg_selector.xml" value="0.25885416666666666" />
+        <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/drawable/tab_bg_unselected.xml" value="0.25885416666666666" />
+        <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/layout/activity_main.xml" value="0.24270833333333333" />
+        <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/layout/fragment_home.xml" value="0.359375" />
+        <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/layout/fragment_pin.xml" value="0.359375" />
+        <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/layout/fragment_vaccination.xml" value="0.24270833333333333" />
+        <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/layout/item_slot.xml" value="0.35885416666666664" />
         <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3651041666666667" />
       </map>
     </option>

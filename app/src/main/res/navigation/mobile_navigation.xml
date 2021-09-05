@@ -9,7 +9,7 @@
         android:id="@+id/navigation_vaccination"
         android:name="com.example.vaccinator.ui.vaccination.VaccinationFragment"
         android:label="@string/title_vaccination"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_vaccination" />
 
     <fragment
         android:id="@+id/navigation_stats"

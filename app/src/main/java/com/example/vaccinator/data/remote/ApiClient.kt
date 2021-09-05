@@ -2,6 +2,8 @@ package com.example.vaccinator.data.remote
 
 import android.os.Build
 import android.os.LocaleList
+import com.chuckerteam.chucker.api.ChuckerInterceptor
+import com.example.vaccinator.VaccinatorApp
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -13,7 +15,6 @@ import java.util.*
 import java.util.concurrent.TimeUnit
 
 object ApiClient {
-
     class AcceptLanguageHeaderInterceptor : Interceptor {
         @Throws(IOException::class)
         override fun intercept(chain: Interceptor.Chain): Response {

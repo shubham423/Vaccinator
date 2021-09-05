@@ -4,37 +4,50 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import com.example.vaccinator.databinding.FragmentHomeBinding
+import com.example.vaccinator.R
+import com.example.vaccinator.databinding.FragmentVaccinationBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 class VaccinationFragment : Fragment() {
 
-    private lateinit var vaccinationViewModel: VaccinationViewModel
-    private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private var _binding: FragmentVaccinationBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var slotsViewPagerAdapter: SlotsViewPagerAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        vaccinationViewModel =
-            ViewModelProvider(this).get(VaccinationViewModel::class.java)
+    ): View {
+        _binding= FragmentVaccinationBinding.inflate(layoutInflater)
+        return binding.root
+    }
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        val textView: TextView = binding.textHome
-        vaccinationViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+        setupTabLayoutWithViewPager()
+    }
+
+    private fun setupTabLayoutWithViewPager() {
+        slotsViewPagerAdapter = SlotsViewPagerAdapter(requireActivity())
+        binding.pager.adapter = slotsViewPagerAdapter
+
+
+        TabLayoutMediator(
+            binding.tabLayout, binding.pager
+        ) { tab, position ->
+            when (position) {
+                0 -> {
+                    tab.text = getString(R.string.search_by_pin)
+                }
+                1 -> {
+                    tab.text = getString(R.string.search_by_district)
+                }
+            }
+        }.attach()
     }
 
     override fun onDestroyView() {

@@ -3,7 +3,7 @@ package com.example.vaccinator.data.models
 
 import com.google.gson.annotations.SerializedName
 
-data class SloatResponse(
+data class SlotResponse(
     @SerializedName("sessions")
     val sessions: List<Session>
 ) {
