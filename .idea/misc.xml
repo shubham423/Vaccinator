@@ -12,6 +12,8 @@
         <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/drawable/tab_bg_selector.xml" value="0.25885416666666666" />
         <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/drawable/tab_bg_unselected.xml" value="0.25885416666666666" />
         <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/layout/activity_main.xml" value="0.24270833333333333" />
+        <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/layout/dropdown_item.xml" value="0.35885416666666664" />
+        <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/layout/fragment_district.xml" value="0.359375" />
         <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/layout/fragment_home.xml" value="0.359375" />
         <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/layout/fragment_pin.xml" value="0.359375" />
         <entry key="..\:/AndroidStudioProjects/Vaccinator/app/src/main/res/layout/fragment_vaccination.xml" value="0.24270833333333333" />
