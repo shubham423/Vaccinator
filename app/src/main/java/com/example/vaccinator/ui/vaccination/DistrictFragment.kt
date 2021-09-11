@@ -1,19 +1,16 @@
 package com.example.vaccinator.ui.vaccination
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import com.example.vaccinator.R
-import com.example.vaccinator.data.models.StatesResponse
 import com.example.vaccinator.data.models.StatesResponse.*
-import com.example.vaccinator.databinding.FragmentDashboardBinding
 import com.example.vaccinator.databinding.FragmentDistrictBinding
+import com.example.vaccinator.viewmodels.VaccinationViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

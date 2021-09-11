@@ -8,8 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
+import com.example.vaccinator.adapters.SlotsAdapter
 import com.example.vaccinator.databinding.FragmentPinBinding
+import com.example.vaccinator.viewmodels.VaccinationViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 

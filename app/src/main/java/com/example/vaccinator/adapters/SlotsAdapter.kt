@@ -1,4 +1,4 @@
-package com.example.vaccinator.ui.vaccination
+package com.example.vaccinator.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,7 +9,7 @@ import com.example.vaccinator.data.models.SlotResponse.Session
 import com.example.vaccinator.databinding.ItemSlotBinding
 
 class SlotsAdapter(private val list: List<Session>) :
-    ListAdapter<Session,SlotsAdapter.SlotsViewHolder>(
+    ListAdapter<Session, SlotsAdapter.SlotsViewHolder>(
         object : DiffUtil.ItemCallback<Session>() {
             override fun areItemsTheSame(oldItem: Session, newItem: Session): Boolean {
                 return oldItem == newItem
@@ -22,7 +22,7 @@ class SlotsAdapter(private val list: List<Session>) :
     ) {
     inner class SlotsViewHolder(binding : ItemSlotBinding) : RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SlotsViewHolder{
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SlotsViewHolder {
         val binding = ItemSlotBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
         return SlotsViewHolder(binding)

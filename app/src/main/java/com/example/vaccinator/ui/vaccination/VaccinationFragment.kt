@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.vaccinator.R
+import com.example.vaccinator.adapters.SlotsViewPagerAdapter
 import com.example.vaccinator.databinding.FragmentVaccinationBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint

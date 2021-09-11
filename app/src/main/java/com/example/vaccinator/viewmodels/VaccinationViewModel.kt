@@ -1,15 +1,12 @@
-package com.example.vaccinator.ui.vaccination
+package com.example.vaccinator.viewmodels
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.vaccinator.data.models.DistrictsResponse
 import com.example.vaccinator.data.models.DistrictsResponse.*
-import com.example.vaccinator.data.models.SlotResponse
 import com.example.vaccinator.data.models.SlotResponse.*
-import com.example.vaccinator.data.models.StatesResponse
 import com.example.vaccinator.data.models.StatesResponse.State
 import com.example.vaccinator.data.repository.MainRepository
 import dagger.hilt.android.lifecycle.HiltViewModel

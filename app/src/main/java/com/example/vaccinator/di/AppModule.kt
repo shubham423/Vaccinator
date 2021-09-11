@@ -12,11 +12,9 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.io.IOException
 import java.util.*
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
@@ -24,27 +22,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
-
-
-//    class AcceptLanguageHeaderInterceptor : Interceptor {
-//        @Throws(IOException::class)
-//        override fun intercept(chain: Interceptor.Chain): Response {
-//            val originalRequest: Request = chain.request()
-//            val requestWithHeaders: Request = originalRequest.newBuilder()
-//                .header("Accept-Language", language)
-//                .header("Accept", "application/json")
-//                .build()
-//            return chain.proceed(requestWithHeaders)
-//        }
-//
-//        private val language: String
-//            get() = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-//                LocaleList.getDefault().toLanguageTags()
-//            } else {
-//                Locale.getDefault().language
-//            }
-//    }
-
 
     @Provides
     @Singleton

@@ -1,8 +1,10 @@
-package com.example.vaccinator.ui.vaccination
+package com.example.vaccinator.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.vaccinator.ui.vaccination.DistrictFragment
+import com.example.vaccinator.ui.vaccination.PinFragment
 
 
 class SlotsViewPagerAdapter(fragmentActivity: FragmentActivity) :
