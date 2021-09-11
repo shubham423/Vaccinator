@@ -1,8 +1,9 @@
 package com.example.vaccinator
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-
+@HiltAndroidApp
 class VaccinatorApp: Application() {
     init {
         instance = this

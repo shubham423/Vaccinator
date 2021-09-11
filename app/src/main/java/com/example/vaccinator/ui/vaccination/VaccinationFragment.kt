@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import com.example.vaccinator.R
 import com.example.vaccinator.databinding.FragmentVaccinationBinding
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class VaccinationFragment : Fragment() {
 
     private var _binding: FragmentVaccinationBinding? = null

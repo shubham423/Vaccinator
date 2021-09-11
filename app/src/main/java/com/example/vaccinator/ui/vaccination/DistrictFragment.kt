@@ -7,17 +7,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import com.example.vaccinator.R
 import com.example.vaccinator.data.models.StatesResponse
 import com.example.vaccinator.data.models.StatesResponse.*
 import com.example.vaccinator.databinding.FragmentDashboardBinding
 import com.example.vaccinator.databinding.FragmentDistrictBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DistrictFragment : Fragment() {
     private lateinit var binding: FragmentDistrictBinding
 
-    private lateinit var viewModel: VaccinationViewModel
+    private  val viewModel: VaccinationViewModel by activityViewModels()
+
     private lateinit var states: ArrayList<String>
     private lateinit var statesObjects: ArrayList<State>
     private lateinit var districts: ArrayList<String>
@@ -37,7 +41,6 @@ class DistrictFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(VaccinationViewModel::class.java)
         viewModel.getStates()
         states= ArrayList()
         statesObjects= ArrayList()

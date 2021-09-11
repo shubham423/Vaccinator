@@ -7,16 +7,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import com.example.vaccinator.databinding.FragmentPinBinding
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
-
+@AndroidEntryPoint
 class PinFragment : Fragment() {
     private lateinit var binding: FragmentPinBinding
 
     private lateinit var slotsAdapter: SlotsAdapter
-    private lateinit var viewModel: VaccinationViewModel
+    private  val viewModel: VaccinationViewModel by activityViewModels()
 
     private var date: String? = null
 
@@ -30,7 +32,7 @@ class PinFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this).get(VaccinationViewModel::class.java)
+
         setUpClickListeners()
         initObservers()
     }
