@@ -26,6 +26,9 @@ class VaccinationViewModel @Inject constructor(private val repo: MainRepository)
     private var _districtsList=MutableLiveData<List<District>>()
     var districtsList: LiveData<List<District>> = _districtsList
 
+    private var _selectedState=MutableLiveData<String>()
+    var selectedState: LiveData<String> = _selectedState
+
 
     fun getFeed(pincode: String, data: String) {
         viewModelScope.launch {
@@ -50,5 +53,8 @@ class VaccinationViewModel @Inject constructor(private val repo: MainRepository)
                 _districtsList.postValue(it.body()?.districts)
             }
         }
+    }
+     fun setSelectedState(state: String){
+        _selectedState.value=state
     }
 }
