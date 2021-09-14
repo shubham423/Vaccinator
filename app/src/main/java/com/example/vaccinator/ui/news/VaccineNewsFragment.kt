@@ -15,15 +15,13 @@ class VaccineNewsFragment : Fragment() {
     private lateinit var vaccineNewsViewModel: VaccineNewsViewModel
     private var _binding: FragmentNotificationsBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         vaccineNewsViewModel =
             ViewModelProvider(this).get(VaccineNewsViewModel::class.java)
 

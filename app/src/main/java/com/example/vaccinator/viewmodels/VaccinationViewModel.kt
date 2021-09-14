@@ -26,8 +26,8 @@ class VaccinationViewModel @Inject constructor(private val repo: MainRepository)
     private var _districtsList=MutableLiveData<List<District>>()
     var districtsList: LiveData<List<District>> = _districtsList
 
-    private var _selectedState=MutableLiveData<String>()
-    var selectedState: LiveData<String> = _selectedState
+    private var _selectedStateId=MutableLiveData<String>()
+    var selectedStateId: LiveData<String> = _selectedStateId
 
 
     fun getFeed(pincode: String, data: String) {
@@ -55,6 +55,6 @@ class VaccinationViewModel @Inject constructor(private val repo: MainRepository)
         }
     }
      fun setSelectedState(state: String){
-        _selectedState.value=state
+        _selectedStateId.value=state
     }
 }
