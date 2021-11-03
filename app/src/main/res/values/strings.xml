@@ -16,4 +16,6 @@
     <string name="_1213424">1213424</string>
     <string name="select_state">Select State</string>
     <string name="select_district">Select District</string>
+    <string name="state">State</string>
+    <string name="district">District</string>
 </resources>
