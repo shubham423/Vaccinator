@@ -20,6 +20,10 @@ class VaccinationViewModel @Inject constructor(private val repo: MainRepository)
     private var _slotsList = MutableLiveData<List<Session>>()
     var slotsList: LiveData<List<Session>> = _slotsList
 
+    private var _slotsListByDistrict = MutableLiveData<List<Session>>()
+    var slotsListByDistrict: LiveData<List<Session>> = _slotsListByDistrict
+
+
     private var _statesList=MutableLiveData<List<State>>()
     var statesList: LiveData<List<State>> = _statesList
 
@@ -30,9 +34,9 @@ class VaccinationViewModel @Inject constructor(private val repo: MainRepository)
     var selectedStateId: LiveData<String> = _selectedStateId
 
 
-    fun getFeed(pincode: String, data: String) {
+    fun getFeed(pincode: String, date: String) {
         viewModelScope.launch {
-            repo.getFeed(pincode, data).let {
+            repo.getFeed(pincode, date).let {
                 _slotsList.postValue(it.body()?.sessions)
             }
         }
@@ -56,5 +60,13 @@ class VaccinationViewModel @Inject constructor(private val repo: MainRepository)
     }
      fun setSelectedState(state: String){
         _selectedStateId.value=state
+    }
+
+    fun getSlotsByDistrict(districtId: String, date: String) {
+        viewModelScope.launch {
+            repo.getSlotsByDistrict(districtId, date).let {
+                _slotsListByDistrict.postValue(it.body()?.sessions)
+            }
+        }
     }
 }

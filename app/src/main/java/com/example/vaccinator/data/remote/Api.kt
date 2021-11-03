@@ -20,6 +20,12 @@ interface Api {
     suspend fun getStates(
     ): Response<StatesResponse>
 
+    @GET("/api/v2/appointment/sessions/public/findByDistrict")
+    suspend fun getSlotsByDistrict(
+        @Query("district_id") district_id: String? = null,
+        @Query("date") tag: String? = null,
+    ): Response<SlotResponse>
+
     @GET("/api/v2/admin/location/districts/{state_id}")
     suspend fun getDistricts(
         @Path("state_id") state_id: String

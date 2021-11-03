@@ -9,7 +9,9 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.example.utils.showDLog
 import com.example.vaccinator.R
+import com.example.vaccinator.adapters.SlotsAdapter
 import com.example.vaccinator.data.models.DistrictsResponse.District
 import com.example.vaccinator.data.models.StatesResponse.*
 import com.example.vaccinator.databinding.FragmentDistrictBinding
@@ -26,6 +28,8 @@ class DistrictFragment : Fragment() {
     private var statesObjects: ArrayList<State> = ArrayList()
     private var districtsObjects: ArrayList<District> = ArrayList()
     private var districts: ArrayList<String> = ArrayList()
+    private var selectedDistrict: District?=null
+    private lateinit var slotsAdapter: SlotsAdapter
 
 
     override fun onCreateView(
@@ -56,6 +60,15 @@ class DistrictFragment : Fragment() {
 
         }
 
+        initCLickListeners()
+
+    }
+
+    private fun initCLickListeners() {
+        binding.button.setOnClickListener {
+            showDLog("selected district is $selectedDistrict")
+            viewModel.getSlotsByDistrict(selectedDistrict?.districtId.toString(),"04-11-2021")
+        }
     }
 
     private fun handleDistricts(position: Int) {
@@ -69,6 +82,7 @@ class DistrictFragment : Fragment() {
 
         binding.districtSpinnerTv.setOnItemClickListener { parent, view, position, id ->
             binding.districtSpinnerTv.error = null
+            selectedDistrict=districtsObjects[position]
         }
     }
 
@@ -89,6 +103,13 @@ class DistrictFragment : Fragment() {
                     districtsObjects.add(i)
                 }
             }
+        }
+
+        viewModel.slotsListByDistrict.observe(viewLifecycleOwner){
+            showDLog("$$$$$$$$$$$$$$ $it")
+            slotsAdapter= SlotsAdapter(it)
+            binding.rvSlots.adapter=slotsAdapter
+           slotsAdapter.submitList(it)
         }
     }
 }

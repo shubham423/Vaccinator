@@ -15,4 +15,7 @@ class MainRepository @Inject constructor(private val api: Api) {
 
     suspend fun getDistricts(stateId: String): Response<DistrictsResponse> =
         api.getDistricts(stateId)
+
+    suspend fun getSlotsByDistrict(districtId: String,date: String): Response<SlotResponse> =
+        api.getSlotsByDistrict(districtId,date)
 }
