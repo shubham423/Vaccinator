@@ -1,5 +1,6 @@
 package com.example.vaccinator.ui.vaccination
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -17,6 +18,8 @@ import com.example.vaccinator.data.models.StatesResponse.*
 import com.example.vaccinator.databinding.FragmentDistrictBinding
 import com.example.vaccinator.viewmodels.VaccinationViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
+import kotlin.collections.ArrayList
 
 @AndroidEntryPoint
 class DistrictFragment : Fragment() {
@@ -30,6 +33,8 @@ class DistrictFragment : Fragment() {
     private var districts: ArrayList<String> = ArrayList()
     private var selectedDistrict: District?=null
     private lateinit var slotsAdapter: SlotsAdapter
+
+    private var date: String? = null
 
 
     override fun onCreateView(
@@ -67,7 +72,28 @@ class DistrictFragment : Fragment() {
     private fun initCLickListeners() {
         binding.button.setOnClickListener {
             showDLog("selected district is $selectedDistrict")
-            viewModel.getSlotsByDistrict(selectedDistrict?.districtId.toString(),"04-11-2021")
+            viewModel.getSlotsByDistrict(selectedDistrict?.districtId.toString(),date.toString())
+        }
+
+        binding.dateTv.setOnClickListener {
+
+            val c = Calendar.getInstance()
+            val year = c.get(Calendar.YEAR)
+            val month = c.get(Calendar.MONTH)
+            val day = c.get(Calendar.DAY_OF_MONTH)
+
+            val dpd = DatePickerDialog(
+                this.requireContext(), { _, year, monthOfYear, dayOfMonth ->
+                    val dateStr = """$dayOfMonth-${monthOfYear + 1}-${year}"""
+                    date = dateStr
+                    binding.dateTv.text = dateStr
+                },
+                year,
+                month,
+                day
+            )
+            dpd.show()
+
         }
     }
 
